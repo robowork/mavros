@@ -22,4 +22,5 @@
 		<arg name="fcu_protocol" value="$(arg fcu_protocol)" />
 		<arg name="respawn_mavros" value="$(arg respawn_mavros)" />
 	</include>
+	<node pkg="mavros" type="t265_odom_frame_to_ned_static_transformer.py" name="t265_odom_frame_to_ned_static_transformer" respawn="true" output="screen"/>
 </launch>
