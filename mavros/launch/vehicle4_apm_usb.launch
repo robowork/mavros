@@ -4,11 +4,11 @@
 
 	<arg name="fcu_url" default="/dev/ttyACM0:115200"/>
 	<arg name="gcs_url" default="" />
-	<arg name="tgt_system" default="3" />
+	<arg name="tgt_system" default="4" />
 	<arg name="tgt_component" default="1" />
 	<arg name="log_output" default="screen" />
 	<arg name="fcu_protocol" default="v2.0" />
-	<arg name="respawn_mavros" default="true" />
+	<arg name="respawn_mavros" default="false" />
 
 	<include file="$(find mavros)/launch/node.launch">
 		<arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
@@ -22,5 +22,4 @@
 		<arg name="fcu_protocol" value="$(arg fcu_protocol)" />
 		<arg name="respawn_mavros" value="$(arg respawn_mavros)" />
 	</include>
-	<node pkg="mavros" type="t265_odom_frame_to_ned_static_transformer.py" name="t265_odom_frame_to_ned_static_transformer" respawn="true" output="screen"/>
 </launch>
